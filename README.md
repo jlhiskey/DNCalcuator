@@ -44,3 +44,5 @@ Output to the console the answer to the proposed math problem.
                 - Your solution is 3.
          
  
+## Screenshot of Output
+![solution image](./Solution.PNG)
