@@ -8,6 +8,7 @@ namespace DNCalculator
 {
     class Program
     {
+        // Opening Screen when application is run.
         static void Main()
         {
             Console.WriteLine("Welcome to Jason's C# Calculator:");
@@ -15,6 +16,8 @@ namespace DNCalculator
             int userOperation = int.Parse(Console.ReadLine());
             OperationRouter(userOperation);
         }
+
+        // Router that handles user input of what arithmetic operation is wanted.
         static void OperationRouter(int userOperation)
         {
             switch (userOperation)
@@ -43,6 +46,7 @@ namespace DNCalculator
             }
         }
 
+        // Addition method
         static void Addition()
         {
             Console.WriteLine("What numbers would you like to add together?");
@@ -57,6 +61,7 @@ namespace DNCalculator
             Console.ReadLine();
         }
 
+        // Subtraction method
         static void Subtraction()
         {
             Console.WriteLine("What numbers would you like to subtract?");
@@ -71,6 +76,7 @@ namespace DNCalculator
             Console.ReadLine();
         }
 
+        // Multiplication method
         static void Multiplication()
         {
             Console.WriteLine("What numbers would you like to multiply?");
@@ -84,6 +90,8 @@ namespace DNCalculator
             Console.WriteLine("Your solution is " + solution + ".");
             Console.ReadLine();
         }
+
+        // Division method
         static void Division()
         {
             Console.WriteLine("What numbers would you like to divide?");
@@ -91,7 +99,14 @@ namespace DNCalculator
             for (int i = 0; i < numberArray.Length; i++)
             {
                 numberArray[i] = int.Parse(Console.ReadLine());
+                if (numberArray[i] == 0)
+	            {
+                Console.WriteLine("You cannot divide by zero. Please select a different integer.");
+                numberArray[i] = int.Parse(Console.ReadLine());
+	            }
                 Console.WriteLine("You Selected " + numberArray[i] + ". You have " + (numberArray.Length - (i + 1)) + " choices left.");
+	           
+                
             }
             int solution = numberArray[0] / numberArray[1];
             Console.WriteLine("Your solution is " + solution + ".");
